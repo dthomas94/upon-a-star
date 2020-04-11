@@ -1,11 +1,16 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
   "author": "Danielle E. Thomas",
   "license": "MIT",
   "dependencies": {
     "apollo-server": "^2.12.0",
-    "graphql": "^15.0.0"
+    "graphql": "^15.0.0",
+    "nodemon": "^2.0.3",
+    "typescript": "^3.8.3"
   }
 }
