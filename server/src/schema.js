@@ -24,7 +24,8 @@ const typeDefs = gql`
 		tags: [Tag!]
 		price: Currency
 		imageURL: String
-		created: String!
+		createdAt: String!
+    createdBy: User!
 	}
 	type WishList {
 		id: ID!
@@ -32,7 +33,8 @@ const typeDefs = gql`
 		description: String!
 		tags: [Tag!]
 		wishes: [Wish!]
-		created: String!
+		createdAt: String!
+    createdBy: User!
 	}
 
 	type User {
