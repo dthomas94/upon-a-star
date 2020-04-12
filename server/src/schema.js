@@ -1,5 +1,4 @@
 const { gql } = require("apollo-server");
-const { GraphQLEnumType } = require("graphql");
 
 const typeDefs = gql`
 	enum CurrencyCodeEnum {
@@ -40,7 +39,6 @@ const typeDefs = gql`
 	type User {
 		id: ID!
 		email: String!
-		password: String!
 		wishLists: [WishList!]
 	}
 
@@ -62,7 +60,7 @@ const typeDefs = gql`
 	}
 
 	type Query {
-		wishLists(title: String, tags: [String!]): [WishList!]
+		wishLists: [WishList!]
 		wishList(id: ID!): WishList
 		wish(id: ID!): Wish
 		wishes(tags: [String!]): [Wish!]
@@ -81,7 +79,7 @@ const typeDefs = gql`
 		editWishList(id: ID!, title: String, description: String): WishList!
 		removeWish(id: ID!): String #message verification
 		removeWishList(id: ID!): String #message verification
-		login(email: String!, password: String!): String #login token
+		login(email: String!): String #login token
 	}
 `;
 

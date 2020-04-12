@@ -1,10 +1,9 @@
 require('dotenv').config();
 
 const { Sequelize } = require('sequelize');
-console.log(process.env.DB_NAME)
 
 module.exports.createStore = () => {
-  const db = new Sequelize('upon-a-star', process.env.DB_NAME, '', {
+  const db = new Sequelize(process.env.DB_NAME, process.env.DB_ROLE, process.env.DB_PASS, {
     host: 'localhost',
     port: 5432,
     dialect: 'postgres',
@@ -14,7 +13,7 @@ module.exports.createStore = () => {
     createdAt: Sequelize.DATE,
     updatedAt: Sequelize.DATE,
     email: Sequelize.STRING,
-    password: Sequelize.STRING,
+    token: Sequelize.STRING,
   });
 
   const wishes = db.define('wish', {
@@ -28,4 +27,6 @@ module.exports.createStore = () => {
 		price: Sequelize.FLOAT,
 		imageURL: Sequelize.STRING
   });
+
+  return { db, users, wishes} 
 }

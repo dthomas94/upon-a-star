@@ -8,6 +8,8 @@
   "author": "Danielle E. Thomas",
   "license": "MIT",
   "dependencies": {
+    "apollo-datasource": "^0.7.0",
+    "apollo-datasource-rest": "^0.8.1",
     "apollo-server": "^2.12.0",
     "dotenv": "^8.2.0",
     "graphql": "^15.0.0",
